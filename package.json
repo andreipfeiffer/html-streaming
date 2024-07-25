@@ -1,0 +1,17 @@
+{
+  "name": "html-stream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx nodemon server.js",
+    "generate-cert": "sh ./scripts/generate-cert.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "spdy": "^4.0.2"
+  }
+}
