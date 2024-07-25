@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { WritableStream } from 'node:stream/web';
 
 import * as controller from "./controller.js";
-import {getHead, getMenu, getFooter, getHeavyBody, __dirname} from "./utils.js"
+import { __dirname } from "./utils.js"
 
 const PORT = 3303
 const CERT_DIR = `${__dirname}/cert`;
