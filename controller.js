@@ -1,8 +1,10 @@
 import {getHead, getHeavyBody, getMenu, getFooter} from "./utils.js";
 
 export async function homePageController(req, res) {
+  const title = "Homepage";
+
   const head = await getHead();
-  const menu = await getMenu("Homepage");
+  const menu = await getMenu(title);
   const footer = await getFooter();
 
   const content = `
@@ -19,8 +21,10 @@ export async function homePageController(req, res) {
 }
 
 export async function regularPageController(req, res) {
+  const title = "Regular page";
+
   const head = await getHead();
-  const menu = await getMenu("Regular page");
+  const menu = await getMenu(title);
   const footer = await getFooter();
 
   const body = await getHeavyBody();
@@ -39,12 +43,13 @@ export async function regularPageController(req, res) {
 }
 
 export async function asyncPageController(req, res) {
+  const title = "Async Client Fetch";
+
   const head = await getHead();
-  const menu = await getMenu("Async Client Fetch");
+  const menu = await getMenu(title);
   const footer = await getFooter();
 
-  // NOTE: the body is fetched by the client, from another route
-  // const body = await getBody();
+  // const body = await getHeavyBody();
 
   const content = `
   <html>
@@ -69,8 +74,10 @@ export async function asyncPageController(req, res) {
 }
 
 export async function httpStreamController(req, res) {
+  const title = "HTTP streaming page";
+
   const head = await getHead();
-  const menu = await getMenu("HTTP streaming page");
+  const menu = await getMenu(title);
 
   res.write(`
     <html>
@@ -101,6 +108,8 @@ export async function httpStreamController(req, res) {
 }
 
 export async function dsdStreamController(req, res) {
+  const title = "Declarative Shadow DOM streaming page";
+
   const head = await getHead();
 
   res.write(`
@@ -120,7 +129,7 @@ export async function dsdStreamController(req, res) {
         </template>
     `);
 
-    const menu = await getMenu("Declarative Shadow DOM streaming page");
+    const menu = await getMenu(title);
     const footer = await getFooter();
 
     res.write(`<div slot="footer">${footer}</div>`);

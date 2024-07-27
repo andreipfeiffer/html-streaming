@@ -15,3 +15,10 @@ _Code Designer_ at _Smilecloud Biometrics_
 _Co-Organizer_ of _tim.js_
 
 [Blog](andreipfeiffer.dev)
+
+## Conclusions
+
+- DSD is well supported: https://caniuse.com/declarative-shadow-dom
+- Frameworks would (probably) implement this in the future
+- Render Web Components (Custom Elements) on the Server
+- Stream HTML out-of-order without JS
