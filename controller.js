@@ -7,12 +7,14 @@ export async function homePageController(req, res) {
   const menu = await getMenu(title);
   const footer = await getFooter();
 
+  const body = "Homepage body";
+
   const content = `
   <html>
     ${head}
     <body>
       ${menu}
-      <main>Homepage body</main>
+      <main>${body}</main>
       ${footer}
     </body>
   <html/>`;
