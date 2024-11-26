@@ -90,7 +90,7 @@ export async function httpStreamController(req, res) {
   `);
 
   res.write(`
-    <main>...loading, please wait</main>
+    <main>Loading, please wait...</main>
   `);
 
   const footer = await getFooter();
@@ -98,7 +98,7 @@ export async function httpStreamController(req, res) {
   res.write(`
         ${footer}
       </body>
-    <html/>
+    </html>
   `);
 
   const body = await getHeavyBody();
@@ -127,23 +127,23 @@ export async function dsdStreamController(req, res) {
           </style>
 
           <slot name="menu"></slot>
-          <slot name="body"><main>...loading, please wait</main></slot>
+          <slot name="body"><main>Loading, please wait...</main></slot>
           <slot name="footer"></slot>
         </template>
-    `);
+  `);
 
-    const menu = await getMenu(title);
-    const footer = await getFooter();
+  const menu = await getMenu(title);
+  const footer = await getFooter();
 
-    res.write(`<div slot="footer">${footer}</div>`);
-    res.write(`<div slot="menu">${menu}</div>`);
+  res.write(`<div slot="footer">${footer}</div>`);
+  res.write(`<div slot="menu">${menu}</div>`);
 
-    const body = await getHeavyBody();
+  const body = await getHeavyBody();
 
-    res.write(`<main slot="body">${body}</main>`);
+  res.write(`<div slot="body"><main>${body}</main></div>`);
 
-    res.end(`
+  res.end(`
       </body>
-    <html/>
+    </html>
   `);
 }
