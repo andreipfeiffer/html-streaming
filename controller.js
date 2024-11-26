@@ -58,19 +58,20 @@ export async function asyncPageController(req, res) {
     ${head}
     <body>
       ${menu}
-      <main>...loading, please wait</main>
+      <main>Loading, please wait...</main>
       ${footer}
     </body>
 
     <script>
-      document.addEventListener("DOMContentLoaded", async () => {
+      async function getBody() {
         const res = await fetch("/body");
         const body = await res.text();
         document.querySelector("main").innerHTML = body;
-      });
+      }
+
+      getBody();
     </script>
-  <html/>
-  `;
+  </html>`;
 
   res.send(content);
 }
