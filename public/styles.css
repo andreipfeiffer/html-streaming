@@ -21,10 +21,17 @@ footer {
 a:link,
 a:visited {
   color: #1e90ff;
+  padding: 2px 5px;
+  display: inline-block;
+  border-radius: 3px;
 }
 a:hover {
   color: blue;
   text-decoration: none;
+}
+a:active {
+  background: #1e90ff;
+  color: white;
 }
 
 h1 {
