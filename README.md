@@ -6,7 +6,7 @@ Inspired by: https://lamplightdev.com/blog/2024/01/10/streaming-html-out-of-orde
 
 To run locally:
 
-```
+```bash
 # install dependencies
 npm ci
 
