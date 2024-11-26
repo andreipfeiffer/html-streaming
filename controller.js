@@ -17,9 +17,9 @@ export async function homePageController(req, res) {
       <main>${body}</main>
       ${footer}
     </body>
-  <html/>`;
+  </html>`;
 
-  res.send(content)
+  res.send(content);
 }
 
 export async function regularPageController(req, res) {
@@ -39,7 +39,7 @@ export async function regularPageController(req, res) {
       <main>${body}</main>
       ${footer}
     </body>
-  <html/>`;
+  </html>`;
 
   res.send(content);
 }
